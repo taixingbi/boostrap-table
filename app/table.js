@@ -1,5 +1,4 @@
-//exporte les données sélectionnées
-var $table = $('#table');
+
 
 var data = [
 	{"index": 0, "firstName": "Jitender", "lastName": "ben",    "timestamp": "10-04-19 12:00:17",   "email": "ben@gmail.com" },
@@ -12,15 +11,27 @@ var data = [
 	{"index": 7, "firstName": "bad",      "lastName": "ben",    "timestamp": "10-04-12 12:00:17",   "email": "lie@gmail.com" },
 ];
 
-var tr;
-for (var i = 0; i < data.length; i++) {
-  tr = $('<tr/>');
-  tr.append("<td>" + "</td>");
-  tr.append("<td>" + data[i].index + "</td>");
-  tr.append("<td>" + data[i].firstName + "</td>");
-  tr.append("<td>" + data[i].lastName + "</td>");
-  tr.append("<td>" + data[i].timestamp + "</td>");
-  tr.append("<td>" + data[i].email + "</td>");
+get_data();
 
-  $('table').append(tr);
+async function get_data(){
+    let str= '';
+    for(let i=0; i<data.length; i++){
+        let row= ` 
+        <tr>
+            <td></td>
+            <td> ${data[i].index} </td>
+            <td> ${data[i].firstName} </td>
+            <td> ${data[i].lastName}</td>
+            <td> ${data[i].timestamp} </td>
+            <td> ${data[i].email} </td>
+        </tr>    
+    `;
+        str= str + row;
+    }
+    document.getElementById("tbody_str").innerHTML= str;
 }
+
+
+
+
+

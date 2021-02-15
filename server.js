@@ -10,12 +10,12 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/app'));
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/app/index.html'));
+    res.sendFile(path.join(__dirname + '/app/table.html'));
     app.use(express.static(__dirname + '/app'));
 
 });
 
-port= 8091
+port= 8092
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 console.log("Tabnle App");
 
